@@ -1,8 +1,10 @@
 import { expect, tap } from '@pushrocks/tapbundle';
-import * as scalyr from '../ts/index'
+import * as scalyr from '../ts/index';
 
-tap.test('first test', async () => {
-  console.log(scalyr.standardExport)
+let testScalyr: scalyr.Scalyr;
+
+tap.test('should create a valid instance of Scalyr', async () => {
+  testScalyr = new scalyr.Scalyr();
 })
 
-tap.start()
+tap.start();

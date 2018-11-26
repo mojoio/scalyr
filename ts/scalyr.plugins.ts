@@ -1,4 +1,11 @@
-const removeme = {};
+// =================
+// @pushrocks
+// =================
+
+import * as smartlogInterfaces from '@pushrocks/smartlog-interfaces';
+import * as smartrequest from '@pushrocks/smartrequest';
+
 export {
-  removeme
-}
+  smartlogInterfaces,
+  smartrequest
+};
