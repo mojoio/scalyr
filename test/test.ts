@@ -5,6 +5,6 @@ let testScalyr: scalyr.Scalyr;
 
 tap.test('should create a valid instance of Scalyr', async () => {
   testScalyr = new scalyr.Scalyr();
-})
+});
 
 tap.start();
