@@ -1,6 +1,6 @@
 {
   "name": "@mojoio/scalyr",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "description": "an unofficial scalyr api package with support for the smartlog ecosystem",
   "main": "dist/index.js",
