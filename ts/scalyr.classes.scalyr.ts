@@ -1,11 +1,20 @@
 import * as plugins from './scalyr.plugins';
+import { ScalyrAggregator } from './scalyr.classes.aggregator';
 
 export class Scalyr {
-  sendScalyrEvent() {}
+  public scalyrToken: string;
+  public aggregator: ScalyrAggregator;
 
-  getLogDestination(): plugins.smartlogInterfaces.ILogDestination {
+  constructor(scalyrTokenArg: string) {
+    this.scalyrToken = scalyrTokenArg;
+    this.aggregator = new ScalyrAggregator(this);
+  }
+
+  public getLogDestination(): plugins.smartlogInterfaces.ILogDestination {
     return {
-      handleLog: (logArg: plugins.smartlogInterfaces.ILogPackage) => {}
+      handleLog: (logArg: plugins.smartlogInterfaces.ILogPackage) => {
+        this.aggregator.addLogPackage(logArg);
+      }
     };
   }
 }
