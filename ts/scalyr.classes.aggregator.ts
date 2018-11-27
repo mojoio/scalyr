@@ -19,7 +19,7 @@ export class ScalyrAggregator {
       events: [
         {
           thread: '1',
-          ts: (Date.now() * 1000000).toString(),
+          ts: (logPackage.timestamp * 1000000).toString(),
           type: 0,
           sev: 3,
           attrs: {
