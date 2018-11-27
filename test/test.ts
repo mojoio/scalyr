@@ -16,11 +16,11 @@ tap.test('should send a message', async () => {
   logDestination.handleLog({
     context: {
       company: 'Lossless GmbH',
-      companyunit: 'companyunit',
-      containerName: 'myContainer',
-      environment: 'local',
+      companyunit: 'Lossless Cloud',
+      containerName: 'shipzone_mojoio_scalyr',
+      environment: 'test',
       runtime: 'node',
-      zone: 'myzone'
+      zone: 'gitzone'
     },
     level: 'info',
     message: 'hi',

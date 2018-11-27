@@ -14,8 +14,7 @@ export class ScalyrAggregator {
       token: this.scalyrRef.scalyrToken,
       session: 'test-session',
       sessionInfo: {
-        serverType: 'frontend',
-        serverId: 'prod-front-2'
+        serverHost: logPackage.context.containerName,
       },
       events: [
         {
@@ -24,10 +23,15 @@ export class ScalyrAggregator {
           type: 0,
           sev: 3,
           attrs: {
-            message: 'record retrieved',
-            recordId: 39217,
-            latency: 19.4,
-            length: 39207
+            message: logPackage.message,
+            logEcosystem: 'smartlog',
+            level: logPackage.level,
+            context_company: logPackage.context.company,
+            context_companyUnit: logPackage.context.companyunit,
+            context_containerName: logPackage.context.containerName,
+            context_environment: logPackage.context.environment,
+            context_runtime: logPackage.context.runtime,
+            context_zone: logPackage.context.zone
           }
         }
       ],
@@ -35,14 +39,14 @@ export class ScalyrAggregator {
         { id: 1, name: 'request handler thread' },
         { id: 2, name: 'background processing thread' }
       ]
-    }
-
-    console.log('sending the following request body:')
-    console.log({...requestBody, token: 'not shown for security reasons using spread operator'});
+    };
 
     const response = await plugins.smartrequest.postJson(this.logUrl, {
       requestBody
     });
-    console.log(response.body);
+    if (response.body.status !== 'success') {
+      const sendError = new Error(JSON.stringify(response.body));
+      console.log(sendError);
+    }
   }
 }
