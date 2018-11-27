@@ -10,7 +10,7 @@ export class Scalyr {
     this.aggregator = new ScalyrAggregator(this);
   }
 
-  public getLogDestination(): plugins.smartlogInterfaces.ILogDestination {
+  public get logDestination(): plugins.smartlogInterfaces.ILogDestination {
     return {
       handleLog: (logArg: plugins.smartlogInterfaces.ILogPackage) => {
         this.aggregator.addLogPackage(logArg);

@@ -12,7 +12,7 @@ tap.test('should create a valid instance of Scalyr', async () => {
 });
 
 tap.test('should send a message', async () => {
-  const logDestination = testScalyr.getLogDestination();
+  const logDestination = testScalyr.logDestination;
   logDestination.handleLog({
     context: {
       company: 'Lossless GmbH',
