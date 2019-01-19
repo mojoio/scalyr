@@ -8,7 +8,7 @@ const testQenv = new Qenv('./','./.nogit/')
 let testScalyr: scalyr.Scalyr;
 
 tap.test('should create a valid instance of Scalyr', async () => {
-  testScalyr = new scalyr.Scalyr(process.env.SCALYR_TOKEN);
+  testScalyr = new scalyr.Scalyr(testQenv.getEnvVarOnDemand('SCALYR_TOKEN'));
 });
 
 tap.test('should send a message', async () => {

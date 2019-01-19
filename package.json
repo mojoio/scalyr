@@ -13,16 +13,16 @@
     "format": "(gitzone format)"
   },
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.0.22",
-    "@gitzone/tstest": "^1.0.15",
-    "@pushrocks/qenv": "^2.0.2",
+    "@gitzone/tsbuild": "^2.1.4",
+    "@gitzone/tstest": "^1.0.18",
+    "@pushrocks/qenv": "^4.0.0",
     "@pushrocks/tapbundle": "^3.0.7",
-    "@types/node": "^10.11.7",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0"
+    "@types/node": "^10.12.18",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.17.0"
   },
   "dependencies": {
-    "@pushrocks/lik": "^3.0.2",
+    "@pushrocks/lik": "^3.0.4",
     "@pushrocks/smartlog-interfaces": "^2.0.5",
     "@pushrocks/smartrequest": "^1.1.14"
   }

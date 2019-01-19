@@ -12,7 +12,7 @@ export class ScalyrAggregator {
   public async addLogPackage(logPackage: plugins.smartlogInterfaces.ILogPackage) {
     const requestBody = {
       token: this.scalyrRef.scalyrToken,
-      session: 'test-session',
+      session: logPackage.context.containerName,
       sessionInfo: {
         serverHost: logPackage.context.containerName,
       },
