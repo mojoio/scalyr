@@ -14,7 +14,7 @@ export class ScalyrAggregator {
       token: this.scalyrRef.scalyrToken,
       session: logPackage.context.containerName,
       sessionInfo: {
-        serverHost: logPackage.context.containerName,
+        serverHost: logPackage.context.containerName
       },
       events: [
         {

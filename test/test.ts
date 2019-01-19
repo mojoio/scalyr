@@ -3,7 +3,7 @@ import * as scalyr from '../ts/index';
 
 import { Qenv } from '@pushrocks/qenv';
 
-const testQenv = new Qenv('./','./.nogit/')
+const testQenv = new Qenv('./', './.nogit/');
 
 let testScalyr: scalyr.Scalyr;
 
